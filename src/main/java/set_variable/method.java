@@ -13,7 +13,7 @@ public class method {
                 .queryParam(requestParam)
                 .when().get(requestPath)
                 .then().log().all()
-                .assertThat().statusCode(200).extract().response().toString();
+                .assertThat().statusCode(200).extract().response().asString();
         return get;
     }
     //POST
@@ -24,7 +24,7 @@ public class method {
                 .body(requestBody)
                 .when().post(requestPath)
                 .then().log().all()
-                .assertThat().statusCode(200).extract().response().toString();
+                .assertThat().statusCode(200).extract().response().asString();
         return post;
     }
 }
